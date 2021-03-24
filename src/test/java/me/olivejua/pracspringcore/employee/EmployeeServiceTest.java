@@ -1,11 +1,19 @@
 package me.olivejua.pracspringcore.employee;
 
+import me.olivejua.pracspringcore.AppConfig;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class EmployeeServiceTest {
 
-    EmployeeService employeeService = new EmployeeServiceImpl();
+    EmployeeService employeeService;
+
+    @BeforeEach
+    public void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        this.employeeService = appConfig.employeeService();
+    }
 
     @Test
     public void join() {

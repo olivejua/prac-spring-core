@@ -1,14 +1,12 @@
 package me.olivejua.pracspringcore;
 
-import me.olivejua.pracspringcore.employee.Employee;
-import me.olivejua.pracspringcore.employee.EmployeeService;
-import me.olivejua.pracspringcore.employee.EmployeeServiceImpl;
-import me.olivejua.pracspringcore.employee.Position;
+import me.olivejua.pracspringcore.employee.*;
 
 public class EmployeeApp {
 
     public static void main(String[] args) {
-        EmployeeService employeeService = new EmployeeServiceImpl();
+        AppConfig appConfig = new AppConfig();
+        EmployeeService employeeService = appConfig.employeeService();
         Employee employee = new Employee(1L, "employeeA", Position.STAFF, 30000000);
         employeeService.hire(employee);
 
